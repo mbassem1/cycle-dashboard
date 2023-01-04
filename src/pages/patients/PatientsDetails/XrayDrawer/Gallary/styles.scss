@@ -1,0 +1,25 @@
+@import '../../../../../assets/styles/_color.scss';
+
+.lg-react-element {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  a {
+    img {
+      width: 280px;
+      height: 190px;
+      border-radius: 4px;
+    }
+    position: relative;
+    i {
+      position: absolute;
+      top: 12%;
+      left: 90%;
+      transform: translate(-50%, -50%);
+      background-color: $white;
+      padding: 5px;
+      border-radius: 4px;
+      color: $secondary-dark;
+    }
+  }
+}

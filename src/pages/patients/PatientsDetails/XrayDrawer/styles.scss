@@ -1,0 +1,46 @@
+@import '../../../../assets/styles/_color.scss';
+
+.xray-container {
+  .xray-header {
+    border-bottom: 1px solid $dimmed;
+    padding: 31px 20px;
+    .xray-header-title {
+      font-size: 18px;
+      color: $dark;
+    }
+  }
+  .xray-info {
+    padding: 31px 20px;
+    .xray-info-header {
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: $dark;
+    }
+    .xray-info-body {
+      background-color: $dimmed;
+      padding: 16px;
+      border-radius: 4px;
+      .xray-info-body-item {
+        margin-bottom: 16px;
+        .xray-info-body-item-label {
+          font-size: 14px;
+          color: $secondary-dark;
+        }
+        .xray-info-body-item-value {
+          font-size: 14px;
+          color: $dark;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .xray-scans {
+    padding: 31px 20px;
+    position: relative;
+    .xray-scans-header {
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: $dark;
+    }
+  }
+}

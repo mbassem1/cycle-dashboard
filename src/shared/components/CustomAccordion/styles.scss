@@ -1,0 +1,131 @@
+@import '../../../assets/styles/_color.scss';
+.dx-accordion {
+  margin: 0;
+}
+.dx-accordion-item-opened {
+  margin: 0;
+}
+.dx-accordion-item {
+  box-shadow: none;
+}
+.accordion {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+.accordion-item {
+  border: 1px solid $dimmed;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+  overflow: hidden;
+  height: 100%;
+}
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: $dimmed;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 1px solid $dimmed;
+  flex-wrap: wrap;
+  .dx-button {
+    height: 34px;
+  }
+  .left-side {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  p{
+    font-size: 18px;
+    font-weight: bold;
+  }
+    .toggle-sign {
+      font-size: 1.5rem;
+      font-weight: 100;
+      color: $dark;
+    }
+  }
+
+  .right-side {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    .dx-button-content{
+      background-color: $light-pink;
+    }
+    .dx-button-text{
+      font-weight: 600;
+    }
+    .dx-button {
+      &.dx-state-hover {
+        color: $primary !important;
+        background-color: $light-pink;
+      }
+      
+    }
+    .dx-widget.dx-button.dx-button-mode-outlined.dx-button-gray.dx-button-has-icon:hover {
+      background-color: $light-pink;
+      color: $secondary-dark !important;
+    }
+    .dx-widget.dx-button.dx-button-mode-outlined.dx-button-gray.dx-button-has-icon:hover i {
+      color: $secondary-dark !important;
+    }
+  }
+}
+
+.accordion-title:hover {
+  background-color: $dimmed;
+}
+
+.accordion-title {
+  padding: 1rem;
+}
+
+.accordion-content {
+  background-color: $white;
+}
+
+.accordion-footer {
+  background-color: $dimmed;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 100%;
+  height: 16px;
+}
+
+.dark-theme {
+  .accordion-item {
+    border: 1px solid rgba($color: $white, $alpha: .1);
+  }
+  .accordion-title {
+    background-color: $dark;
+    border: 1px solid rgba($color: $white, $alpha: .1);
+    color: $white;
+    .left-side {
+      .toggle-sign {
+        color: $white;
+      }
+      
+    }
+    .right-side {
+      .dx-button-content {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .accordion-title:hover {
+    background-color: $dark;
+  }
+
+  .accordion-content {
+    background-color: $dark;
+    color: $white;
+  }
+  #accordion-container .dx-accordion-item-title {
+    border: 1px solid rgba($color: $white, $alpha: .1);
+  }
+}

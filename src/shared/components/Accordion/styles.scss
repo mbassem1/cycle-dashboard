@@ -1,0 +1,49 @@
+@import '../../../assets//styles/_color.scss';
+
+#accordion-container {
+  .dx-accordion-item-title {
+    border: 1px solid $dimmed;
+    &::before {
+      background-position: center;
+      top: 3px;
+      left: 15px;
+      font-weight: 400;
+      color: $dark;
+      content: '\002B';
+      font-family: DXIcons;
+      font-size: 24px;
+      height: 24px;
+      width: 24px;
+      font-weight: bold;
+      color: $primary;
+    }
+  }
+  .dx-accordion-item-opened > .dx-accordion-item-title::before {
+    content: '\2212';
+  }
+}
+
+.dark-theme {
+  .dx-accordion-item-title {
+    border: 1px solid $white;
+    background-color: $dark;
+    color: $white;
+    &::before {
+      color: $white;
+    }
+  }
+  .dx-accordion-item-title::before {
+    color: $white !important;
+  }
+}
+
+.rtl-theme {
+  #accordion-container {
+    .dx-accordion-item-title {
+      &::before {
+        left: auto;
+        right: 15px;
+      }
+    }
+  }
+}

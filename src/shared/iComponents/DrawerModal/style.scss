@@ -1,0 +1,48 @@
+@use '../../../assets/styles/mediaQueries' as *;
+@import '../../../assets/styles/color';
+@import '../../../assets/styles/variables';
+
+.drawer-modal-contain {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  height: 100vh;
+  padding: 16px;
+  overflow-y: auto;
+  overflow-x: visible;
+  background-color: $white;
+  transition: $transition;
+  &.active {
+    right: 0 !important;
+  }
+  .drawer-modal-close-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .drawer-modal-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+}
+
+.dark-theme {
+  .drawer-modal-contain {
+    background-color: $dark;
+  }
+}
+
+.rtl-theme {
+  .drawer-modal-contain {
+    &.active {
+      right: auto !important;
+      left: 0 !important;
+    }
+  }
+}

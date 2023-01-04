@@ -1,0 +1,49 @@
+@import '../../../assets/styles/_color.scss';
+
+.date-box-wrapper{
+    max-width: 30%;
+    input {
+        color: $dark;
+    }
+    
+    
+}
+
+.dx-dropdowneditor-icon{
+    &::before{
+        color: $primary
+    }
+}
+.dx-overlay-content{
+    border-radius: 8px !important;
+}
+.dx-datebox-wrapper-calendar .dx-calendar{
+    margin: 0px;
+    .dx-icon{
+        color: $primary
+    }
+}   
+.dx-texteditor.dx-editor-underlined::after{
+    
+    border-bottom: 1px solid $primary;
+}
+
+
+.dark-theme {
+    .date-box-wrapper{
+        input {
+            color: $white;
+        }
+        
+        
+    }
+    .dx-dropdowneditor-icon{
+        &::before{
+            color: $white
+        }
+    }
+    .dx-texteditor.dx-editor-underlined::after{
+        border-bottom: 1px solid $white;
+    }
+    
+}

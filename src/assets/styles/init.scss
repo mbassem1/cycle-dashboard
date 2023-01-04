@@ -1,0 +1,23 @@
+/* GLobal */
+@import "./color";
+@import "./fonts";
+@import "./variables";
+
+/* Devextreme */
+@import "devextreme/dist/css/dx.common.css";
+@import "./devextreme/dx.material.cycles_theme.css";
+
+/* Bootstrap 5 */
+@import 'bootstrap/dist/css/bootstrap-grid.min.css';
+
+/* Icons */
+@import "../fonts/icons8/scss/line-awesome.scss";
+
+/* Config */
+@import "./config";
+
+/* Global */
+@import "./global";
+
+/* Tag */
+@import "shared/components/Tag/tag";

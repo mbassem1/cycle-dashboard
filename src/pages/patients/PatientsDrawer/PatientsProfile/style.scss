@@ -1,0 +1,42 @@
+@import "../../../../assets/styles/color";
+
+.profile-card {
+    padding-bottom: 24px;
+    
+    &:not(:last-child) {
+        border-bottom: 1px solid $dimmed;
+        margin-bottom: 24px;
+    }
+    .profile-card-head {
+        .dx-button-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .profile-card-body {
+        .profile-body-item {
+            &.full-row {
+                flex-direction: column;
+                justify-content: flex-start !important;
+                align-items: flex-start !important;
+            }
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+.patients-search-head {
+    .toolbar-contain {
+        margin-inline-end: 8px;
+    }
+}
+
+.dark-theme {
+    .profile-card {
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba($color: $white, $alpha: .1);
+        }
+    }
+}

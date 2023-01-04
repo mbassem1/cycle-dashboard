@@ -1,0 +1,75 @@
+@use '../../../assets/styles/mediaQueries' as *;
+@import '../../../assets/styles/color';
+@import '../../../assets/styles/variables';
+
+.dx-button-has-text {
+  min-width: 84px;
+  .dx-button-content {
+    padding: 6px 25px;
+  }
+}
+.dx-button.dx-button-default.dx-state-disabled {
+  opacity: 1;
+}
+
+.dx-button-has-icon.dx-button-has-text {
+  .dx-button-content {
+    padding: 6px 25px;
+  }
+  .dx-icon {
+    margin-inline-end: 9px;
+  }
+}
+
+.rtl-theme {
+  .dx-button-has-icon.dx-button-has-text .dx-icon.dx-icon-right,
+  .dx-rtl .dx-button-has-icon.dx-button-has-text .dx-icon,
+  .dx-rtl.dx-button-has-icon.dx-button-has-text .dx-icon {
+    margin-inline-end: 9px;
+  }
+}
+.dark-theme {
+  .dx-button-mode-outlined {
+    color: $white !important;
+    &.dx-button-has-icon.dx-button-has-text .dx-icon {
+      color: $secondary-light !important;
+    }
+    &.dx-button-normal:hover {
+      color: $white !important;
+      border-color: $white !important;
+      background-color: $secondary-light;
+      .dx-icon {
+        color: $white !important;
+      }
+    }
+    &.dx-state-disabled {
+      background-color: $light-gray !important;
+    }
+    .dx-icon {
+      color: $light-gray !important;
+    }
+    &#rounded {
+      &:hover {
+        border-color: $light-gray !important;
+      }
+      color: $secondary-light !important;
+      .dx-icon {
+        color: $light-gray !important;
+      }
+    }
+  }
+
+
+  .dx-button {
+    background-color: transparent !important;
+    color: $white !important;
+    border: 1px solid rgba($color: $white, $alpha: .1) !important;
+    &#only-icon {
+      border: 1px solid rgba($color: $white, $alpha: .1) !important;
+      .dx-icon {
+        color: $white !important;
+      }
+    }
+    
+  }
+}

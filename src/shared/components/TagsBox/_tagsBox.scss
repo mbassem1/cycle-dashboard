@@ -1,0 +1,71 @@
+@use '../../../assets/styles/mediaQueries' as *;
+@import '../../../assets/styles/color';
+@import '../../../assets/styles/variables';
+
+.dx-tagbox{
+  .dx-button-content {
+    padding: 0;
+    margin-top: 8px;
+    .dx-icon {
+      font-size: 16px;
+    }
+  }
+  .dx-texteditor-input{
+    margin-top: 20px !important;
+  }
+  .dx-tag-container {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+  }
+  .dx-tag {
+    margin-top: 20px;
+    margin-inline-end: 8px ;
+    margin-inline-start: 0;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    .dx-tag-content {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline-start: 17px;
+      padding-inline-end: 38px;
+      background-color: $gray;
+      color: $secondary-dark;
+      border-radius: 18px;
+      span{
+        font-size: 14px;
+
+      }
+  }
+  &:hover{
+    .dx-tag-content {
+      background-color: $gray;
+      color:  $secondary-dark;
+    }
+  }
+  .dx-tag-remove-button::before {
+    left: 25%;
+    color:  $secondary-dark;
+    background-color: transparent;
+  }
+
+}
+}
+
+.dx-tagbox:not(.dx-texteditor-empty):not(.dx-editor-filled):not(.dx-editor-outlined).dx-state-hover::after,
+.dx-tagbox:not(.dx-texteditor-empty):not(.dx-editor-filled):not(.dx-editor-outlined)::after {
+  border-bottom: 1px solid $primary;
+}
+
+.dark-theme {}
+
+.rtl-theme {
+  .dx-tagbox{
+    .dx-tag {
+      .dx-tag-remove-button {
+        left: 10px !important;
+        right: auto;
+      }
+    }
+  }
+ 
+}

@@ -1,0 +1,51 @@
+@import '../../../../assets/styles/color';
+
+.orders-grid {
+    height: 235px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.orders-item {
+    padding: 10px 1rem;
+    &:not(:last-child) {
+        border-bottom: 1px solid $dimmed;
+    }
+    .orders-actions-list {
+        li {
+            &:not(:last-child) {
+                margin-inline-end: 8px;
+            }
+            .dx-button {
+                background-color: rgba($color: $primary, $alpha: .1);
+                .dx-icon {
+                    color: $primary;
+                }
+                .dx-button-content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            
+        }
+    }
+}
+
+.dark-theme {
+    .orders-item {
+        &:not(:last-child) {
+            border-bottom-color: rgba($color: $white, $alpha: .1);
+        }
+        .orders-actions-list {
+            li {
+                .dx-button {
+                    background-color: rgba($color: $white, $alpha: .1);
+                    .dx-icon {
+                        color: $white;
+                    }
+                }
+                
+            }
+        }
+    }
+}

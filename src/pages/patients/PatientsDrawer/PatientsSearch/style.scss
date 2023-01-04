@@ -1,0 +1,12 @@
+@import "../../../../assets/styles/color";
+
+.patients-search-head {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid $dimmed;
+}
+.dark-theme {
+    .patients-search-head {
+        border-bottom: 1px solid rgba($color: $white, $alpha: .1);
+    }
+}

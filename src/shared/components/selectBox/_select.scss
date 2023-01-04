@@ -1,0 +1,14 @@
+@use '../../../assets/styles/mediaQueries' as *;
+@import '../../../assets/styles/color';
+@import '../../../assets/styles/variables';
+
+
+.dark-theme {
+    .field{
+        i{
+           &:before{
+             color: $white;
+           }
+        }
+    }
+}

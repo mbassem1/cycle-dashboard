@@ -1,0 +1,34 @@
+@use '../../../assets/styles/mediaQueries' as *;
+@import '../../../assets/styles/color';
+
+.patients-create-wizard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 48px;
+    @include mobile {
+        display: block;
+    }
+}
+.name-fields-wrap {
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid $secondary-dark;
+    & > .cycle-text {
+        display: inline-block;
+        background: #fff;
+        position: relative;
+        top: -27px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+.dark-theme {
+    .name-fields-wrap {
+        border: 1px solid rgba($color: $white, $alpha: .1);
+        & > .cycle-text {
+            background: transparent;
+        }
+    }
+}

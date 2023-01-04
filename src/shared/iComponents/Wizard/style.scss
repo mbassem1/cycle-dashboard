@@ -1,0 +1,114 @@
+@use '../../../assets/styles/mediaQueries' as *;
+@import '../../../assets/styles/color';
+@import '../../../assets/styles/variables';
+
+$wizard-margin: 96px;
+$wizard-icon-width: 46px;
+$wizard-icon-height: 46px;
+
+.wizard-list {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    .wizard-item {
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        user-select: none;
+        &:not(:last-child) {
+            margin-inline-end: $wizard-margin;
+            &:after {
+                content: "";
+                position: absolute;
+                top: ($wizard-icon-height / 2);
+                left: 50%;
+                z-index: 1;
+                width: calc(50% + ($wizard-icon-width + $wizard-margin));
+                height: 1px;
+                background-color: $gray;
+            }
+            
+        }
+        &.completed {
+            &:after {
+                background-color: $primary;
+            }
+            .wizard-icon {
+                background-color: $primary;
+                .cycle-icon {
+                    color: $white !important;
+                }
+            }
+            .wizard-text {
+                .cycle-text {
+                    color: $primary;
+                }
+            }
+        }
+
+        .wizard-icon {
+            width: $wizard-icon-width;
+            height: $wizard-icon-height;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $gray;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+            
+        }
+    }
+
+}
+
+.rtl-theme {
+    .wizard-list {
+        .wizard-item {
+            &:not(:last-child) {
+                &:after {
+                    left: auto;
+                    right: 50%;
+                }   
+            }
+        }
+    }
+}
+
+.dark-theme {
+    .wizard-list {
+        .wizard-item {
+            &:not(:last-child) {
+                &:after {
+                    background-color: rgba($color: $gray, $alpha: .1);
+                }
+                
+            }
+            &.completed {
+                &:after {
+                    background-color: $white;
+                }
+                .wizard-icon {
+                    background-color: $white;
+                    .cycle-icon {
+                        color: $dark !important;
+                    }
+                }
+                .wizard-text {
+                    .cycle-text {
+                        color: $white;
+                    }
+                }
+            }
+    
+            .wizard-icon {
+                background-color: #252525;
+            }
+        }
+    
+    }
+}

@@ -1,0 +1,105 @@
+@use '../../../assets/styles/mediaQueries' as *;
+@import '../../../assets/styles/color';
+@import '../../../assets/styles/variables';
+
+
+.sidebar-drawer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: - ($drawer-width - $sidebar-width);
+    width: $drawer-width;
+    height: 100%;
+    z-index: 1000;
+    background-color: $white;
+    padding: 24px;
+    transition: $transition;
+    border-inline-start: 1px solid $gray;
+    overflow-y: auto;
+    &.active {
+        left: $sidebar-width;
+    }
+    @include mobile {
+        height: calc(100vh - $header-height-mobile);
+        top: $header-height-mobile;
+        left: -100%;
+        padding-top: 0;
+        width: calc(80% - $sidebar-width-mobile);
+    }
+    .sidebar-list-wrap {
+        .sidebar-list-item {
+            flex-direction: row;
+            justify-content: flex-start;
+            padding: 12px 16px;
+            border-radius: 5px;
+            a {
+                flex-direction: row;
+                justify-content: flex-start;
+                width: 100%;
+            }
+            i {
+                margin-inline-end: 32px;
+                margin-bottom: 0;
+            }
+            &.active {
+                border-inline-end: 0;
+            }
+        }
+    }
+}
+
+.drawer-active-component {
+    .sidebar-drawer {
+        width: $drawer-component-width;
+        left: - ($drawer-component-width - $sidebar-width);
+        &.active {
+            left: $sidebar-width;
+        }
+        @include mobile {
+            left: -($drawer-component-width + $sidebar-width-mobile);
+            width: calc(80% - $sidebar-width-mobile);
+        }
+    }
+    
+}
+
+
+.rtl-theme {
+    .sidebar-drawer {
+        left: auto;
+        right: - ($drawer-width - $sidebar-width);
+        &.active {
+            left: auto;
+            right: $sidebar-width;
+        }
+        @include mobile {
+            left: auto;
+            right: -100%;
+        }
+    }
+    .drawer-active-component {
+        .sidebar-drawer {
+            left: auto;
+            right: - ($drawer-component-width - $sidebar-width);
+            &.active {
+                left: auto;
+                right: $sidebar-width;
+            }
+            @include mobile {
+                left: auto;
+                right: -$drawer-component-width;
+            }
+        }
+        
+    }
+    
+}
+
+
+.dark-theme {
+    .sidebar-drawer {
+        background-color: $dark;
+        border-inline-start: 0px;
+        border-inline-end: 1px solid rgba($color: $white, $alpha: .1);
+    }
+}

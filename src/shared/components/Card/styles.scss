@@ -1,0 +1,89 @@
+@import '../../../assets/styles/_color.scss';
+// make a mixin for font size and color
+@mixin text($size, $color: $dark, $weight) {
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+}
+.card-wrapper {
+  max-width: 265px;
+  min-height: 323px;
+  background: $white;
+  border: 1px solid #ececf2;
+  padding-top: 42px;
+  border-radius: 10px;
+  position: relative;
+  .card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+
+    .name {
+      @include text(16px, $dark, bold);
+    }
+    .code {
+      @include text(12px, $secondary-dark, normal);
+      text-align: center;
+    }
+    .specialization {
+      @include text(14px, $dark, bold);
+      margin-bottom: 8px;
+    }
+    .phone {
+      @include text(14px, $dark, bold);
+      margin: 8px 0px;
+      direction: ltr;
+    }
+    .email {
+      @include text(14px, $dark, normal);
+    }
+  }
+  .card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 8px 0px;
+    border-top: 1px solid $dimmed;
+    .btn {
+      color: $primary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      font-weight: bold;
+      gap: 8px;
+    }
+  }
+}
+
+.dark-theme {
+  .card-wrapper {
+    background-color: rgba($color: $primary, $alpha: 0.05);
+    border: 1px solid rgba($color: $white, $alpha: 0.05);
+    .card-content {
+      .name,
+      .code,
+      .specialization,
+      .phone,
+      .email {
+        color: $white;
+      }
+    }
+    .card-footer {
+      border-top: 1px solid rgba($color: $white, $alpha: 0.05);
+      .btn {
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,151 @@
+@use '../../assets/styles/mediaQueries' as *;
+@import '../../assets/styles/color';
+@import '../../assets/styles/variables';
+
+.sidebar-contain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: $sidebar-width;
+  height: 100vh;
+  background-color: $white;
+  overflow: hidden;
+  transition: $transition;
+  @include mobile {
+    height: calc(100vh - $header-height-mobile);
+    top: $header-height-mobile;
+    left: -$sidebar-width;
+  }
+  .sidebar-wrap {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10001;
+    background-color: $white;
+    .sidebar-logo {
+      height: $header-height;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 40px;
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+    .sidebar-list {
+      height: calc(100% - ($header-height * 2));
+      overflow-x: hidden;
+      overflow-y: auto;
+      @include mobile {
+        height: calc(100vh - $header-height);
+      }
+    }
+    .sidebar-foot {
+      height: $header-height;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.sidebar-list-wrap {
+  .sidebar-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 2px;
+    border-inline-end: 2px solid transparent;
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    &.active {
+      background-color: rgba($color: $primary, $alpha: 0.1);
+      border-inline-end-color: $primary;
+      p {
+        color: $primary;
+      }
+      i {
+        color: $primary !important;
+      }
+    }
+
+    i {
+      margin-bottom: 4px;
+      font-size: 24px;
+    }
+    p {
+      color: $secondary-dark;
+      font-size: 13px;
+    }
+  }
+}
+
+.drawer-mobile-active {
+  .sidebar-contain {
+    left: 0;
+  }
+}
+
+// Arabic style
+.rtl-theme {
+  .sidebar-contain {
+    left: auto;
+    right: 0;
+    @include mobile {
+      left: auto;
+      right: -$sidebar-width;
+    }
+  }
+
+  .drawer-mobile-active {
+    .sidebar-contain {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+// dark theme
+.dark-theme {
+  .sidebar-contain {
+    background-color: $dark;
+    border-inline-end: 1px solid rgba($color: $white, $alpha: 0.1);
+
+    .sidebar-wrap {
+      background-color: $dark;
+      .sidebar-logo {
+        i {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .sidebar-list-wrap {
+    .sidebar-list-item {
+      &.active {
+        background-color: rgba($color: $white, $alpha: 0.1);
+        p {
+          color: $white;
+        }
+        i {
+          color: $white !important;
+        }
+      }
+
+      p {
+        color: $white;
+      }
+    }
+  }
+}

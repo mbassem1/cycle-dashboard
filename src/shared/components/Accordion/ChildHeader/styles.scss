@@ -1,0 +1,32 @@
+@import '../../../../assets/styles/_color.scss';
+
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: bold;
+  p {
+    margin-inline-start: 23px;
+    color: $primary;
+  }
+    .date {
+      color: $primary;
+    }
+}
+
+.dark-theme {
+  p {
+    color: $white;
+  }
+  .actions {
+    .date {
+      color: $white;
+    }
+    .dots {
+      background-color: $dimmed;
+      &::after {
+        color: $white;
+      }
+    }
+  }
+}

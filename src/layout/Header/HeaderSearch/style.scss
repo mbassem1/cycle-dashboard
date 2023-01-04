@@ -1,0 +1,31 @@
+@import '../../../assets/styles/color';
+
+.header-search-wrap {
+    position: relative;
+    .header-search-result {
+        position: absolute;
+        inset-inline-start: 0;
+        top: 100%;
+        width: max-content;
+        min-width: 280px;
+        z-index: 100001;
+        border-radius: 8px;
+        background-color: $white;
+        overflow: hidden;
+        box-shadow: 0px 6px 20px rgba($color: $dark, $alpha: .1);
+        margin-top: 4px;
+    }
+}
+
+.dark-theme {
+    .header-search-wrap {
+        position: relative;
+        .header-search-result {
+            background-color: $dark;
+
+        }
+        .dx-button {
+            border: 0 !important
+        }
+    }
+}

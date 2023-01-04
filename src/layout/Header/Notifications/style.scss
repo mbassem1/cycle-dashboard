@@ -1,0 +1,66 @@
+@import '../../../assets/styles/color';
+
+.notification-contain {
+    min-width: 444px;
+    max-width: 444px;
+    .notification-head {
+        padding: 16px 32px;
+        background-color: $dimmed;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .notification-body {
+        max-height: 224px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .notification-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        &:not(:last-child) {
+            border-bottom: 1px solid $gray;
+        }
+        .notification-content {
+            display: flex;
+            align-items: center;
+            margin-inline-end: 32px;
+            .notification-icon {
+                width: 42px;
+                height: 42px;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                align-self: flex-start;
+                border-radius: 6px;
+                background-color: $dimmed;
+                margin-inline-end: 8px;
+            }
+        }
+        .notification-date {
+            flex-shrink: 0;
+        }
+    }
+}
+
+.dark-theme {
+    .notification-contain {
+        .notification-head {
+            background-color: rgba($color: $white, $alpha: .1);
+        }
+    
+        .notification-item {
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba($color: $white, $alpha: .1);
+            }
+            .notification-content {
+                .notification-icon {
+                    background-color: rgba($color: $white, $alpha: .1);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@import "../../../../assets/styles/color";
+
+
+.patients-files {
+    max-height: 476px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    li {
+        padding: 16px;
+        cursor: pointer;
+        &:not(:last-child) {
+            
+            border-bottom: 1px solid $dimmed;
+        }
+    }
+    
+}
+.patients-files-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-inline-end: 8px;
+}
+
+.dark-theme {
+    .patients-files {
+       
+        li {
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba($color: $white, $alpha: .1);
+            }
+        }
+        
+    }
+}

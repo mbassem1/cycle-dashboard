@@ -1,0 +1,98 @@
+@import '../../../assets/styles/_color.scss';
+
+.horizontal-slider {
+  width: 100%;
+  max-width: 500px;
+  height: 50px;
+  .thumb-number {
+    color: $white;
+  }
+}
+
+.vertical-slider {
+  height: 380px;
+  width: 50px;
+  border: 1px solid grey;
+}
+
+.example-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: $primary;
+  position: absolute;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -30px 0 0 -20px;
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
+  -o-animation-name: bounce;
+  -ms-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  animation-duration: 1s;
+  ::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    margin: 8px 0 0 8px;
+    background: #2f2f2f;
+    position: absolute;
+    border-radius: 50%;
+  }
+}
+
+.example-thumb.active {
+  background-color: $primary;
+}
+
+.example-track {
+  position: relative;
+  background: $primary;
+}
+
+.example-track.example-track-1 {
+  background: $secondary-dark;
+}
+
+.example-track.example-track-2 {
+  background: #0f0;
+}
+
+.horizontal-slider .example-track {
+  top: 20px;
+  height: 10px;
+  border-radius: 4px;
+}
+
+.horizontal-slider .example-thumb {
+  top: 1px;
+  width: 40px;
+  height: 38px;
+  line-height: 38px;
+}
+
+.vertical-slider .example-thumb {
+  left: 1px;
+  width: 48px;
+  line-height: 40px;
+  height: 50px;
+}
+
+.vertical-slider .example-track {
+  left: 20px;
+  width: 10px;
+}

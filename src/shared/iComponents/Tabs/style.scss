@@ -1,0 +1,108 @@
+@use '../../../assets/styles/mediaQueries' as *;
+@import '../../../assets/styles/color';
+@import '../../../assets/styles/variables';
+
+
+.tabs-contain {
+    .tabs-content {
+        padding-top: 16px;
+    }
+    .tabs-list {
+        display: flex;
+        overflow-y: none;
+        overflow-x: auto;
+        
+        .tabs-list-item {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 21px;
+            padding: 8px 16px;
+            min-width: 90px;
+            min-height: 42px;
+            cursor: pointer;
+            &:not(:last-child) {
+                margin-inline-end: 8px;
+            }
+            .cycle-icon {
+                margin-inline-end: 6px;
+            }
+        }
+        &.outline {
+            .tabs-list-item {
+                border: 1px solid transparent;
+                .cycle-icon,
+                .cycle-text {
+                    color: $secondary-dark !important;
+                }
+                &.active {
+                    border-color: $deep-gray;
+                    .cycle-text, .cycle-icon {
+                        color: $dark !important;
+                    }
+                }
+            }
+        }
+        &.primary {
+            .tabs-list-item {
+                background-color: rgba($color: $primary, $alpha: .1);
+                .cycle-icon,
+                .cycle-text {
+                    color: $primary !important;
+                }
+                &.active {
+                    background-color: $primary;
+                    .cycle-icon, 
+                    .cycle-text {
+                        color: $white !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.dark-theme {
+    .tabs-contain {
+        
+        .tabs-list {
+            
+            
+            
+            &.outline {
+                .tabs-list-item {
+                    border: 1px solid transparent;
+                    .cycle-icon,
+                    .cycle-text {
+                        color: $white !important;
+                    }
+                    &.active {
+                        border-color: $white;
+                        .cycle-text, .cycle-icon {
+                            color: $white !important;
+                        }
+                    }
+                }
+            }
+            &.primary {
+                .tabs-list-item {
+                    background-color: rgba($color: $white, $alpha: .1);
+                    .cycle-icon,
+                    .cycle-text {
+                        color: $white !important;
+                    }
+                    &.active {
+                        background-color: $white;
+                        .cycle-icon, 
+                        .cycle-text {
+                            color: $dark !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

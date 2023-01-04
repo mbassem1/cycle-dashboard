@@ -1,0 +1,52 @@
+@use '../../../assets/styles/mediaQueries'as *;
+@import '../../../assets/styles/color';
+@import '../../../assets/styles/variables';
+
+.dx-switch {
+    line-height: unset;
+    height: auto;
+    .dx-switch-wrapper {
+        padding: 0;
+        top: 0;
+        left: 0 !important;
+        .dx-switch-container {
+            height: 26px;
+        }
+    }
+}
+.dx-switch-container {
+    &::before {
+        background-color: $light-gray;
+    }
+}
+
+.dx-switch-handle {
+    background-color: $secondary-dark;
+}
+
+.dx-switch-on-value {
+    .dx-switch-handle {
+        background-color: $white;
+        left: 1px;
+    }
+}
+
+.dark-theme {
+
+    .dx-switch-container {
+        &::before {
+            background-color: $white;
+        }
+    }
+}
+.switch-label {
+    margin-inline-start: 8px;
+}
+.rtl-theme {
+    .dx-switch-on-value {
+        .dx-switch-handle {
+            left: auto;
+            margin-right: -14px;
+        }
+    }
+}

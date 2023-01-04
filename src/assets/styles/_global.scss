@@ -1,0 +1,213 @@
+// .dx-textbox {
+//   background-color: white !important;
+// }
+.dx-button-mode-text.dx-button-default .dx-icon {
+  color: $secondary-dark !important;
+}
+.dx-placeholder {
+  color: $dark !important;
+  font-size: 14px !important;
+  font-weight: bold;
+}
+.input-label,
+.dx-texteditor-label {
+  font-size: 14px !important;
+  font-weight: normal !important;
+  color: $secondary-dark !important;
+}
+.bg-white {
+  background-color: #fff;
+}
+.dx-overlay-content {
+  border-radius: 0 !important;
+  margin-top: 17px !important;
+}
+.dx-calendar-navigator {
+  background-color: #eee !important;
+  color: black !important;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  .dx-button {
+    color: black !important;
+    min-width: auto !important;
+    border-radius: 0 !important;
+  }
+}
+.dx-button {
+  transition: all 0.5s ease;
+  height: 46px;
+  &#rounded {
+    min-width: auto;
+    height: auto;
+    border-radius: 50% !important;
+    &:hover {
+      border-color: #1c1d21;
+      i {
+        color: #1c1d21;
+      }
+    }
+  }
+  &#only-icon {
+    min-width: auto;
+    border-radius: 8px !important;
+    color: inherit;
+  }
+  // &.outline {
+  //   outline: 1px solid $primary;
+  //   color: $primary;
+  //   &:hover {
+  //     background-color: white;
+  //     color: $dark;
+  //   }
+  // }
+}
+.dx-textbox {
+  .dx-button {
+    min-width: auto !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    &:hover,
+    &:focus {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.input-icon {
+  .dx-textbox {
+    input {
+      position: relative;
+      padding-left: 28px !important;
+    }
+    .custom-icon {
+      position: absolute;
+      top: 25px;
+      left: 0;
+      z-index: 9999;
+      font-size: 18px;
+      color: inherit;
+    }
+  }
+}
+html[dir='rtl'] {
+  .input-icon {
+    .dx-textbox {
+      .custom-icon {
+        right: 0;
+        left: unset;
+      }
+    }
+  }
+}
+.slider {
+  .dx-slider-bar {
+    border-radius: 3px !important;
+    height: 6px !important;
+    background-color: #eee !important;
+  }
+  .dx-slider-range {
+    border-radius: 3px !important;
+    height: 6px !important;
+
+    background-color: $primary !important;
+  }
+  .dx-slider-handle {
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 10px solid transparent !important;
+    background-image: url('http://picsum.com/20') !important;
+  }
+}
+
+.checkbox {
+  .dx-checkbox-icon {
+    border-radius: 4px !important;
+  }
+}
+.success {
+  .dx-progressbar-range {
+    background-color: $success;
+  }
+  .dx-checkbox-text {
+    color: $success;
+  }
+  .dx-checkbox-icon {
+    background-color: rgba($color: $success, $alpha: 0.2);
+    color: $success;
+  }
+  &.dx-switch-on-value .dx-switch-container::before {
+    background-color: $success;
+  }
+  label {
+    color: $success;
+  }
+}
+
+.warn {
+  .dx-progressbar-range {
+    background-color: $warn;
+  }
+}
+.danger {
+  .dx-progressbar-range {
+    background-color: $danger;
+  }
+  &.dx-switch-on-value .dx-switch-container::before {
+    background-color: $danger;
+  }
+  label {
+    color: $danger;
+  }
+}
+.disable {
+  color: $dimmed;
+}
+
+.dxc-title {
+  text {
+    font-family: $f-regular !important;
+  }
+}
+.rtl-theme {
+  .dxc-title {
+    text {
+      font-family: $f-regular-ar !important;
+    }
+  }
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.card-contain {
+  background-color: $white;
+  padding: 26px;
+  border-radius: 12px;
+}
+.error-msg {
+  p {
+    color: $danger;
+    font-size: 13px !important;
+    margin-top: 4px;
+  }
+}
+.dark-theme {
+  .dx-placeholder {
+    color: $white !important;
+  }
+  .input-label,
+  .dx-texteditor-label {
+    color: $white !important;
+  }
+  .card-contain {
+    background-color: rgba($color: $white, $alpha: 0.1);
+  }
+  .error-msg {
+    p {
+      color: $danger !important;
+    }
+  }
+}
+.dx-overlay-wrapper {
+  z-index: 9999999999 !important;
+}

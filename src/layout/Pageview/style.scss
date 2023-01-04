@@ -1,0 +1,38 @@
+@use '../../assets/styles/mediaQueries' as *;
+@import '../../assets/styles/variables';
+
+.page-contain {
+    width: calc(100% - $sidebar-width);
+    margin-top: $header-height;
+    margin-inline-start: $sidebar-width;
+    padding: 0 $layout-padding $layout-padding $layout-padding;
+    transition: $transition;
+    min-height: calc(100vh - $header-height);
+    @include mobile {
+        margin-top: $header-height-mobile;
+        padding: $layout-padding-mobile;
+        margin-inline-start: 0;
+        width: 100%;
+        min-height: calc(100vh - $header-height-mobile);
+    }
+}
+.drawer-active {
+    .page-contain {
+        width: calc(100% - ($sidebar-width + $drawer-width));
+        margin-inline-start: ($sidebar-width + $drawer-width);
+        @include mobile {
+            margin-inline-start: 0;
+            width: 100%;
+        }   
+    }
+    &.drawer-active-component {
+        .page-contain {
+            width: calc(100% - ($sidebar-width + $drawer-component-width));
+            margin-inline-start: ($sidebar-width + $drawer-component-width);
+            @include mobile {
+                margin-inline-start: 0;
+                width: 100%;
+            }   
+        }
+    }
+}

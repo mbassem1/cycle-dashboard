@@ -1,0 +1,202 @@
+@import '../../../assets/styles/_color.scss';
+
+.colors-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  padding: 25px;
+  background-color: $white;
+  gap: 40px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  .single-color {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    .color {
+      display: flex;
+      align-items: center;
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      &.primary {
+        background-color: $primary;
+      }
+      &.succsess {
+        background-color: $success;
+      }
+      &.warn {
+        background-color: $warn;
+      }
+      &.danger {
+        background-color: $danger;
+      }
+    }
+  }
+}
+.avSlots {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 75px 0px 75px;
+  background-color: $white;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.dx-tooltip-wrapper .dx-overlay-content .dx-popup-content {
+  padding: 14px;
+}
+
+.dx-scheduler-container {
+  padding: 25px;
+  .dx-scheduler-header .dx-toolbar .dx-button.dx-item-selected,
+  .dx-scheduler-header .dx-toolbar .dx-button.dx-state-focused,
+  .dx-scheduler-header .dx-toolbar .dx-button.dx-state-hover {
+    background-color: transparent;
+    border: none;
+  }
+  .dx-scheduler-header .dx-toolbar .dx-scheduler-navigator .dx-scheduler-navigator-caption {
+    pointer-events: none;
+  }
+  .dx-toolbar-item {
+    display: block !important;
+  }
+  .dx-scheduler-header .dx-toolbar .dx-toolbar-item-content,
+  .dx-scheduler-header .dx-toolbar .dx-toolbar-menu-container {
+    padding: 0px;
+  }
+  .dx-scheduler-work-space {
+    border: none;
+  }
+  .dx-scheduler-header {
+    height: 80px;
+    border: none;
+    .dx-toolbar .dx-toolbar-before {
+      left: auto;
+      right: 0;
+      padding-right: 0px;
+    }
+    .dx-toolbar .dx-toolbar-after {
+      left: 0;
+      right: auto;
+      padding-left: 0px;
+    }
+  }
+  .dx-scheduler-work-space:not(.dx-scheduler-work-space-all-day):not(.dx-scheduler-work-space-month):not(
+      .dx-scheduler-timeline
+    )
+    .dx-scheduler-header-panel,
+  .dx-scheduler-work-space:not(.dx-scheduler-work-space-all-day):not(.dx-scheduler-work-space-month):not(
+      .dx-scheduler-timeline
+    )
+    .dx-scheduler-header-panel-empty-cell {
+    border: none;
+  }
+  .dx-rtl .dx-scheduler-appointment,
+  .dx-rtl .dx-scheduler-timeline .dx-scheduler-appointment,
+  .dx-scheduler-appointment,
+  .dx-scheduler-timeline .dx-scheduler-appointment,
+  .dx-scheduler-work-space-month .dx-scheduler-appointment {
+    margin-inline-start: 15px;
+    border-radius: 10px;
+  }
+  .dx-scheduler-work-space-grouped:not(.dx-scheduler-agenda) .dx-scheduler-group-row th,
+  .dx-scheduler-work-space.dx-scheduler-work-space-grouped:not(.dx-scheduler-work-space-vertical-grouped):not(
+      .dx-scheduler-timeline
+    )
+    .dx-scheduler-last-group-cell {
+    border-right: none;
+  }
+  .dx-button-has-text .dx-button-content {
+    padding: 11px 25px;
+  }
+  .dx-buttongroup-item.dx-button.dx-button-mode-contained.dx-button-normal.dx-item-selected {
+    background-color: $primary !important;
+    color: $white;
+  }
+  .dx-buttongroup-item.dx-button.dx-button-mode-contained:not(.dx-item-selected) {
+    background-color: $white !important;
+    color: $primary !important;
+  }
+  .dx-scheduler-header-tables-container {
+    background-color: $light-pink;
+    color: $secondary-dark;
+
+    .dx-scheduler-group-header {
+      color: $secondary-dark;
+      text-align: center;
+      padding: 22px;
+    }
+  }
+}
+
+.showtime-preview > div:first-child {
+  font-size: 12px;
+  white-space: normal;
+}
+
+.showtime-preview > div:not(:first-child) {
+  font-size: 11px;
+  white-space: normal;
+}
+
+.movie-tooltip .movie-info {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.movie-tooltip img {
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.movie-tooltip .movie-title {
+  font-size: 1.5em;
+  line-height: 40px;
+}
+
+.long-title h3 {
+  font-weight: 200;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dark-theme {
+  .colors-container {
+    background-color: $dark;
+    color: $white;
+  }
+  .dx-scheduler-time-panel-cell {
+    background-color: $dark;
+    color: $white;
+  }
+  .dx-scheduler-container {
+    background-color: $dark;
+    color: $white;
+
+    .dx-scheduler-work-space {
+      background-color: $dark;
+      color: $white !important;
+    }
+    .dx-widget {
+      background-color: $dark;
+      color: $white !important;
+    }
+    .dx-scheduler-header-tables-container {
+      background-color: $dark;
+      color: $white !important;
+    }
+  }
+  .dx-scheduler-header {
+    background-color: $dark;
+    color: $white !important;
+  }
+  .dx-scheduler-header .dx-toolbar .dx-button,
+  .dx-scheduler-header .dx-toolbar .dx-button .dx-icon,
+  .dx-scheduler-header .dx-toolbar .dx-scheduler-navigator .dx-buttongroup .dx-button.dx-item-selected,
+  .dx-scheduler-header .dx-toolbar .dx-scheduler-navigator .dx-buttongroup .dx-button.dx-item-selected .dx-icon {
+    color: $white !important;
+  }
+}

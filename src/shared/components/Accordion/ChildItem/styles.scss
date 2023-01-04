@@ -1,0 +1,35 @@
+@import '../../../../assets/styles/_color.scss';
+
+.content-wrapper {
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .date {
+      color: $primary;
+    }
+    .dots {
+      margin-inline-start: 20px;
+      background-color: $dimmed;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      &::after {
+        content: '\022EE';
+        color: $primary;
+        font-size: 20px;
+      }
+    }
+  }
+  .item-wrapper {
+    font-size: 12px;
+    margin-bottom: 20px;
+    .head {
+      color: $secondary-dark;
+      font-weight: bold;
+    }
+    .content {
+      color: $dark;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@import '../../../assets/styles/color';
+@import '../../../assets/styles/variables';
+
+.toolbar-contain {
+    display: inline-block;
+    position: relative;
+    .toolbar-data {
+        position: absolute;
+        width: max-content;
+        min-width: 200px;
+        z-index: 100001;
+        border-radius: 8px;
+        background-color: $white;
+        overflow: hidden;
+        box-shadow: 0px 6px 20px rgba($color: $dark, $alpha: .1);
+        &.right {
+            right: 0;
+        }
+        &.left {
+            left: 0;
+        }
+        &.top {
+            bottom: 100%;
+            margin-bottom: 4px;
+        }
+        &.bottom {
+            top: 100%;
+            margin-top: 4px;
+        }
+    }
+    .text-action {
+        padding: 8px 16px;
+        background-color: $dimmed;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        min-height: 36px;
+        .cycle-icon {
+            margin-inline-start: 16px;
+        }
+    }
+    .toolbar-list {
+        
+        .toolbar-list-item {
+            cursor: pointer;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            transition: $transition;
+            &:hover {
+                background-color: rgba($color: $gray, $alpha: .5);
+            }
+            &:not(:last-child) {
+                border-bottom: 1px solid $gray;
+            }
+            .cycle-icon {
+                margin-inline-end: 8px;
+            }
+        }
+    }
+}
+
+.rtl-theme {
+    .toolbar-contain {
+        .toolbar-data {
+            &.right {
+                left: 0;
+                right: auto;
+            }
+            &.left {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+
+
+.dark-theme {
+    .toolbar-contain {
+        .toolbar-data {
+            background-color: $dark;
+            border: 1px solid rgba($color: $white, $alpha: .1);
+        }
+        .text-action {
+            background-color: rgba($color: $white, $alpha: .1);
+        }
+        .toolbar-list {
+            .toolbar-list-item {
+                &:hover {
+                    background-color: rgba($color: $white, $alpha: .1);
+                }
+                &:not(:last-child) {
+                    border-bottom: 1px solid rgba($color: $white, $alpha: .1);
+                }
+            }
+        }
+    }
+}

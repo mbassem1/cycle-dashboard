@@ -1,0 +1,47 @@
+@use '../../../assets/styles/mediaQueries' as *;
+@import '../../../assets/styles/color';
+@import '../../../assets/styles/variables';
+
+.tag{
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 32px;
+    text-transform: capitalize;
+    border-radius: 18px;
+    background-color: $primary;
+    color: $white;
+    font-size: 14px;
+    &.tag-icon{
+        padding-inline-start: 20px;
+        padding-inline-end: 13px;
+    }
+    &.primary{
+        background-color: rgba($color: $primary, $alpha: 0.1);
+        color: $primary;
+    }
+    &.success{
+        background-color: rgba($color: $success, $alpha: 0.1);
+        color: $success;
+    }
+    &.danger{
+        background-color:rgba($color: $danger, $alpha: 0.1);
+        color: $danger;
+    }
+    &.warn{
+        background-color: rgba($color: $warn, $alpha: 0.1);
+        color: $warn;
+    }
+    &.secondary-light  {
+        background-color: rgba($color: $secondary-light, $alpha: 0.1);
+        color: $secondary-light;
+    }
+    i{
+        margin-inline-start: 14px;
+        font-size:16px;
+        cursor: pointer;
+    }
+   
+}
+
+.dark-theme {}
+

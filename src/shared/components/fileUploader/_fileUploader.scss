@@ -1,0 +1,274 @@
+@use '../../../assets/styles/mediaQueries' as *;
+@import '../../../assets/styles/color';
+@import '../../../assets/styles/variables';
+.fileuploader-modal {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.fileuploader-container {
+  margin-top: 12px;
+  &.profile {
+    display: none;
+  }
+  .dx-fileuploader-dragover .dx-fileuploader-input-label {
+    border: unset;
+    text-align: unset;
+  }
+  &.drag {
+    position: relative;
+    .fileuploader-box {
+      position: relative;
+      background-color: $white;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      text-align: center;
+      padding: 25px 0;
+      border: 3px dashed $dimmed;
+      .icon {
+        i {
+          font-size: 120px;
+          color: $light-gray;
+        }
+      }
+      .dx-fileuploader {
+        height: 100%;
+        .dx-fileuploader-input-label {
+          &::after {
+            display: none;
+          }
+        }
+      }
+      .upload {
+        margin-top: -50px;
+        color: $secondary-dark;
+        position: absolute;
+        z-index: 9999;
+        height: 100%;
+        bottom: -75%;
+      }
+    }
+  }
+  .fileuploader-box {
+    background-color: rgba($color: $primary, $alpha: 0.05);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-inline-start: 13px;
+    cursor: pointer;
+    height: 70px;
+    margin-top: 12px;
+    .icon {
+      i {
+        font-size: 60px;
+        color: $primary;
+      }
+    }
+    .dx-fileuploader {
+      height: 100%;
+      .dx-fileuploader-button {
+        display: none;
+      }
+
+      .dx-fileuploader-input {
+        height: 60px;
+      }
+      .dx-fileuploader-input-container {
+        display: block;
+      }
+      .dx-fileuploader-input-label {
+        font-size: 16px;
+        font-family: $f-bold;
+        padding: 3px 8px;
+
+        &::after {
+          content: 'only allowed jpg, png';
+          position: absolute;
+          top: 23px;
+          left: 10px;
+          color: $secondary-dark;
+          font-family: $f-regular;
+        }
+      }
+    }
+  }
+  .fileuploader-list {
+    padding-top: 13px;
+    .fileuploader-item {
+      background-color: rgba($color: $primary, $alpha: 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 5px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-inline-start: 10px;
+      padding-inline-end: 10px;
+      border-radius: 6px;
+      font-family: $f-bold;
+      color: $dark;
+      &:first-of-type {
+        margin-top: 0;
+      }
+      .fileuploader-filename {
+        color: $dark;
+        display: flex;
+        align-items: center;
+        i {
+          color: $primary;
+          margin-inline-end: 12px;
+          font-size: 20px;
+        }
+      }
+      .fileuploader-action {
+        display: flex;
+        gap: 7px;
+        .dx-button-has-icon {
+          min-width: auto;
+          border-radius: 4px !important;
+          .dx-icon {
+            line-height: 18px;
+            font-size: 18px;
+          }
+        }
+        .dx-button.dx-button-danger {
+          background-color: rgba($color: $danger, $alpha: 0.2);
+          .dx-icon {
+            color: $danger;
+          }
+        }
+        .dx-button.dx-button-default {
+          background-color: rgba($color: $primary, $alpha: 0.2);
+          .dx-icon {
+            color: $primary;
+          }
+        }
+        .dx-button-content {
+          padding: 6px 0;
+        }
+      }
+    }
+  }
+}
+
+.rtl-theme {
+  .fileuploader-container {
+    .fileuploader-box {
+      .dx-fileuploader {
+        .dx-fileuploader-input-label {
+          font-family: $f-bold-ar;
+          &::after {
+            content: 'مسموح فقط  jpg, png ';
+            left: auto;
+            right: 10px;
+          }
+        }
+      }
+    }
+    &.drag {
+      .fileuploader-box {
+        .dx-fileuploader {
+          .dx-fileuploader-input-label {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dark-theme {
+  .fileuploader-container {
+    .fileuploader-box {
+      background-color: rgba($color: $primary, $alpha: 0.05);
+      .dx-fileuploader {
+        .dx-fileuploader-input-label {
+          &::after {
+            color: $secondary-dark;
+          }
+        }
+      }
+    }
+    &.drag {
+      .fileuploader-box {
+        background-color: rgba($color: $primary, $alpha: 0.05);
+        border: 3px dashed rgba($color: $white, $alpha: 0.2);
+        .dx-fileuploader {
+          .dx-fileuploader-input-label {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .fileuploader-box {
+      .dx-fileuploader {
+        .dx-fileuploader-input-label {
+          color: $white;
+
+          &::after {
+            color: $white;
+          }
+        }
+      }
+    }
+    .fileuploader-list {
+      .fileuploader-item {
+        .fileuploader-filename {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.user-profile-add {
+  width: 92px;
+  height: 92px;
+  border-radius: 100%;
+  background-color: rgba($color: $primary, $alpha: .1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+}
+.floating-icon {
+  cursor: pointer;
+  background-color: $white;
+  border-radius: 100%;
+  padding: 4px;
+  box-shadow: 0px 6px 20px rgba($color: $dark, $alpha: .1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-end: -64px;
+}
+.dark-theme {
+  .floating-icon {
+    background-color: $dark;
+    .cycle-icon {
+      color: $danger !important;
+    }
+  }
+}

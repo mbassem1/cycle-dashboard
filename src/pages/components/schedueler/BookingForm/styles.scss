@@ -1,0 +1,84 @@
+@import '../../../../assets/styles/_color.scss';
+
+.booking-form {
+  .react-datepicker {
+    width: 100%;
+    .react-datepicker__month-container {
+      width: 100%;
+    }
+  }
+  .booking-form__title {
+    font-size: 14px;
+    color: $secondary-dark;
+    padding-bottom: 10px;
+  }
+  .booking-form__slots {
+    .header {
+      background-color: $light-pink;
+      padding: 16px 8px;
+      margin-top: 16px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+    .body {
+      background-color: $white;
+      overflow-y: scroll;
+      height: 190px;
+      .slot {
+        padding: 6px 8px;
+        border-bottom: 1px solid $dimmed;
+        background: rgba($primary, 0.1);
+        color: $primary;
+        margin: 8px 0px;
+        border-left: 2px solid $primary;
+        display: flex;
+        justify-content: space-between;
+        i {
+          font-size: 20px;
+          color: $danger;
+          cursor: pointer;
+        }
+        &.selected {
+          background: rgba($success, 0.1);
+          color: $success;
+          border-left: 2px solid $success;
+        }
+      }
+    }
+  }
+}
+
+.dark-theme {
+  .booking-form {
+    .booking-form__slots {
+      .header {
+        background-color: $dark;
+      }
+      .body {
+        background-color: $dark;
+        .slot {
+          background: rgba($primary, 0.1);
+          color: $white;
+          border-left: 2px solid $primary;
+        }
+      }
+    }
+  }
+}
+
+.rtl-theme {
+  .booking-form {
+    .booking-form__slots {
+      .body {
+        .slot {
+          border-right: 2px solid $primary;
+          border-left: none;
+          &.selected {
+            border-right: 2px solid $success;
+            border-left: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use '../../../assets/styles/mediaQueries' as *;
+@import '../../../assets/styles/color';
+@import '../../../assets/styles/variables';
+
+.dx-radiogroup-horizontal .dx-collection{
+    justify-content: space-between;
+}
+.dx-radiobutton-icon::before{
+    width: 20px;
+    height:20px;
+    background-color: $light-gray;
+    border: unset;
+}
+.dx-radiobutton-icon::after{
+    display: none;
+}
+.dx-radiobutton-icon-checked .dx-radiobutton-icon-dot{
+    background-color: $white;
+}
+
+.dx-radiobutton-icon-checked::before{
+    background-color: $primary;
+}
+.dx-invalid {
+    .dx-radiobutton-icon-dot{
+    background-color: rgba($color: $danger, $alpha: 0.3);
+    }
+    .dx-radiobutton-icon::before{
+        background-color: rgba($color: $danger, $alpha: 0.3);
+    }
+    p{
+        color: $danger;
+    }
+}
+
+.dark-theme {
+    .dx-radiobutton-icon::before{
+        background-color: $primary;
+
+    }
+    .dx-radiobutton-icon-checked::before{
+        background-color: $white;
+    }
+}
+
+.rtl-theme {
+
+}
+

@@ -1,0 +1,120 @@
+@use '../../assets/styles/mediaQueries' as *;
+@import '../../assets/styles/color';
+@import '../../assets/styles/variables';
+
+.otp-container {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    .otp-input {
+        background-color: transparent;
+        outline: none;
+        border: 0;
+        border-bottom: 1px solid $gray;
+        width: 100% !important;
+        height: 36px;
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+    }
+}
+
+
+.login-contain {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    .login-data {
+        height: 100vh;
+        overflow-y: auto;
+        max-width: 700px;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        @include mobile {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    .login-image {
+        height: 100vh;
+        flex: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include mobile {
+            display: none;
+        }
+    }
+    .login-data-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 24px;
+        @include mobile {
+            padding: 16px;
+            flex-direction: column-reverse;
+        }
+        .dx-button {
+            height: 32px;
+            font-family: $f-regular-ar;
+            @include mobile {
+                margin-bottom: 16px;
+            }
+            .dx-button-text {
+                line-height: unset;
+            }
+        }
+
+    }
+    .login-card {
+        flex: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 96px;
+        @include mobile {
+            padding: 16px;
+        }
+        
+    }
+    .login-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 32px;
+        img {
+            width: 100%;
+            max-width: 170px;   
+        }
+    }
+}
+
+.rtl-theme {
+    .login-contain {
+        .login-data-foot {
+            .dx-button {
+                font-family: $f-regular;
+            }
+        }
+    }
+}
+
+.dark-theme {
+    .login-contain {
+        .login-data {
+            background-color: $dark;
+            
+        }
+    }
+    .otp-container {
+        .otp-input {
+            color: $white;
+        }
+    }
+}

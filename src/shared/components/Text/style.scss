@@ -1,0 +1,14 @@
+@import '../../../assets/styles/_color';
+@import '../../../assets/styles/_variables';
+
+.cycle-text {
+    color: $dark;
+}
+.dark-theme {
+    .cycle-text {
+        color: $white !important;
+    }
+}
+.form-label {
+    margin-bottom: 3px;
+}

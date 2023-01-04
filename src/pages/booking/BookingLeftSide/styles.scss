@@ -1,0 +1,54 @@
+@import '../../../assets/styles/_color.scss';
+
+.booking-wrapper {
+  .booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid $dimmed;
+
+    .booking-header__title {
+      font-size: 13px;
+      font-weight: 600;
+      color: $dark;
+    }
+    .booking-header__subtitle {
+      font-size: 12px;
+      font-weight: 400;
+      color: $secondary-dark;
+    }
+  }
+  .booking-body {
+    position: relative;
+
+    // select last  child
+    .row {
+      &:last-child {
+        position: absolute;
+        bottom: -125%;
+        width: 107%;
+      }
+    }
+  }
+  .react-datepicker {
+    width: 100%;
+    .react-datepicker__month-container {
+      width: 100%;
+    }
+  }
+}
+
+.dark-theme {
+  .booking-wrapper {
+    .booking-header {
+      border-bottom: 1px solid $dimmed;
+      .booking-header__title {
+        color: $white !important;
+      }
+      .booking-header__subtitle {
+        color: $white;
+      }
+    }
+  }
+}

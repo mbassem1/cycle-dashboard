@@ -1,0 +1,19 @@
+.dx-context-menu .dx-menu-items-container {
+  padding: 0px !important;
+}
+.dx-context-menu .dx-menu-item .dx-menu-item-content {
+  padding: 0px !important;
+}
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-direction: row-reverse;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid #f6f6f6;
+  padding: 8px 16px;
+}
